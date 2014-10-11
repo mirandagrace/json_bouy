@@ -21,3 +21,7 @@ end
 task :release do
   puts `gem push #{built_gem_name}`
 end
+
+task :start do
+  exec 'thin start -R rack/config.ru'
+end 
