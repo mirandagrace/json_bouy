@@ -23,5 +23,9 @@ task :release do
 end
 
 task :start do
-  exec 'thin start -R rack/config.ru'
+  exec 'JSON_BOUY_DEV=1 thin start -R rack/config.ru'  
 end 
+
+task :mock do
+  exec 'thin start -R mock_api/config.ru'
+end
